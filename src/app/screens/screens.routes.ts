@@ -3,7 +3,7 @@ import { ScreensComponent } from './screens.component';
 
 export const screensRoutes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: ScreensComponent,
     children: [
       {
@@ -12,15 +12,20 @@ export const screensRoutes: Routes = [
           import('./home/home.page').then((m) => m.HomePage),
       },
       {
+        path: 'profile',
+        loadComponent: () =>
+          import('./profile/profile.page').then((m) => m.ProfilePage),
+      },
+      {
         path: '',
-        redirectTo: '/screens/home',
+        redirectTo: '/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/screens/home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
 ];

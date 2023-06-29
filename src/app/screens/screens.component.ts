@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -8,10 +8,9 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule],
 })
-export class ScreensComponent  implements OnInit {
+export class ScreensComponent {
+  public environmentInjector = inject(EnvironmentInjector);
 
   constructor() { }
-
-  ngOnInit() {}
 
 }

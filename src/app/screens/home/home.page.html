@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button expand="block" (click)="logout()">Sair</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +13,13 @@
       <ion-title size="large">home</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="ion-padding">
+    
+    <!-- <ion-button expand="block" >Sair</ion-button>
+    <ion-nav animated="true" root="nav-home" swipeGesture="true">
+      <ion-nav-link routerDirection="back" component="nav-profile"></ion-nav-link>
+    </ion-nav> -->
+
+  </div>
 </ion-content>

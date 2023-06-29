@@ -3,11 +3,15 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./screens/login/login.page').then((m) => m.LoginPage),
+    loadComponent: () => import('./screens/login/login.page').then((m) => m.LoginPage),
+  },
+  {
+    path: 'screens',
+    loadChildren: () => import('./screens/screens.routes').then((m) => m.screensRoutes),
   },
   {
     path: '',
-    redirectTo: '/screens/login',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
 ];

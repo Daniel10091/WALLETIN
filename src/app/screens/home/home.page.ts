@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -12,9 +13,19 @@ import { IonicModule } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  logout(): any {
+    // window.location.href = '/login';
+    this.router.navigate(['/login']);
+    // this.route.params.subscribe(params => {
+    //   if (params['logout']) {
+    //     this.router.navigate(['/login'], noop as any);
+    //   }
+    // });
   }
 
 }
