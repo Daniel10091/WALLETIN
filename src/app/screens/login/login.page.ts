@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  email?: string;
+  password?: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -21,6 +24,24 @@ export class LoginPage implements OnInit {
   login(): any {
     // window.location.href = '/screens/home';
     this.router.navigate(['/screens/home']);
+  }
+
+  loginWithGoogle(): any {}
+
+  loginWithFacebook(): any {}
+
+  loginWithTwitter(): any {}
+  
+  emailFieldFocus(): any {
+    document.getElementById('emailField')?.focus();
+  }
+
+  passwordFieldFocus(): any {
+    document.getElementById('passwordField')?.focus();
+  }
+
+  forgotPassword(): any {
+    this.router.navigate(['/screens/forgot-password']);
   }
 
 }

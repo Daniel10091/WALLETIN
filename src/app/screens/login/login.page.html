@@ -1,7 +1,82 @@
 <ion-content [fullscreen]="true">
-  <div class="ion-padding ion-justify-content-center ion-align-items-center">
+  <div class="ion-padding" id="page-content">
     
-    <ion-button expand="block" (click)="login()">Entrar</ion-button>
+    <!-- <ion-button expand="block" (click)="login()">Entrar</ion-button> -->
+    
+    <ion-grid fixed>
+      
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <h1 class="title">Enjoy The Features <br/> For You To A Transaction</h1>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="login-with-services">
+        <ion-col size="6">
+          <ion-button expand="block" color="google" (click)="loginWithGoogle()" class="service-login-button google-login-button">
+            <ion-icon name="logo-google"></ion-icon>
+            <span>Google</span>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" color="facebook" (click)="loginWithFacebook()" class="service-login-button facebook-login-button">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <span>Facebook</span>
+          </ion-button>
+        </ion-col>
+        <!-- <ion-col size="12">
+          <ion-button expand="block" color="twitter" (click)="loginWithTwitter()" class="service-login-button twitter-login-button">
+            <ion-icon name="logo-twitter"></ion-icon>
+            <span>Twitter</span>
+          </ion-button>
+        </ion-col> -->
+      </ion-row>
+      
+      <ion-row class="ion-margin-top">
+        <ion-col size="12">
+          <span class="login-division ion-align-items-center">
+            <!-- <span class="login-division-line"></span> -->
+            <span class="login-division-text">On Log in with Email</span>
+            <!-- <span class="login-division-line"></span> -->
+          </span>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="login-form">
+        <ion-col size="12">
+          <ion-row>
+            <div class="login-field-container">
+              <div class="login-field-icon" data-type="email">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+              <div class="login-field-content ion-align-items-center" (click)="emailFieldFocus()">
+                <input type="email" id="emailField" [(ngModel)]="email" required="true" />
+                <label>Email</label>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row>
+            <div class="login-field-container">
+              <div class="login-field-icon" data-type="password">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+              <div class="login-field-content ion-align-items-center" (click)="passwordFieldFocus()">
+                <input type="email" id="passwordField" [(ngModel)]="password" required="true" />
+                <label>Password</label>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button expand="clear" (click)="forgotPassword()" class="forgot-password-link ion-no-padding ion-no-margin">
+                <span>Forgot you password?</span>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
 
   </div>
 </ion-content>

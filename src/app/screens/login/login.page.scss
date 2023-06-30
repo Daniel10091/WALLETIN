@@ -1,0 +1,133 @@
+$medium: var(--ion-color-medium);
+$light: var(--ion-color-light);
+
+$white: #ffffff;
+
+$Google: #db4437;
+$Facebook: #3b5998;
+$Twitter: #1da1f2;
+
+$email: #1dc0f2;
+$password: #ff5e3a;
+
+$border-radius: 14px;
+
+#page-content {
+  height: 100vh;
+  display: flex;
+  padding-top: 4rem;
+}
+
+#page-content .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: $white;
+}
+
+#page-content .login-with-services {
+  .service-login-button {
+    border-radius: $border-radius;
+    &.google-login-button {
+      background: $Google;
+    }
+    &.facebook-login-button {
+      background: $Facebook;
+    }
+    &.twitter-login-button {
+      background: $Twitter;
+    }
+    ion-icon {
+      font-size: 1.8rem;
+      margin-right: 6px;
+    }
+  }
+}
+
+#page-content .login-division {
+  display: flex;
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    // border-bottom: 1px solid $light;
+  }
+  &::before {
+    margin-right: 1rem;
+  }
+  &::after {
+    margin-left: 1rem;
+  }
+  .login-division-text {
+    font-size: 0.9rem;
+    color: $medium;
+  }
+}
+
+#page-content .login-form {
+  .login-field-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding-block: 2rem 1rem;
+    border-bottom: 1px solid $light;
+    .login-field-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      border-radius: $border-radius;
+      &[data-type="email"] {
+        background: $email;
+      }
+      &[data-type="password"] {
+        background: $password;
+      }
+      ion-icon {
+        font-size: 1.8rem;
+        margin: auto;
+      }
+    }
+    .login-field-content {
+      position: relative;
+      width: calc(100% - (55px + 20px));
+      height: 55px;
+      display: flex;
+      gap: 4px;
+      label {
+        position: absolute;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: $white;
+        will-change: contents;
+        transition: all 0.2s ease;
+      }
+      input {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        font-size: 1rem;
+        color: $medium;
+        border: none;
+        background: transparent;
+        padding: 0.5rem 0;
+      }
+      input:focus, input:valid {
+        outline: none;
+        & + label {
+          transform: translateY(-0.9rem);
+        }
+      }
+    }
+  }
+}
+
+#page-content .forgot-password-link {
+  height: 20px;
+  float: right;
+  span {
+    font-size: 0.9rem;
+    color: $medium;
+  }
+}
