@@ -1,0 +1,288 @@
+// *** Variables ***
+
+$balanceAdd: #2dd36f;
+$balanceSubtract: #eb445a;
+$balanceTransfer: #3dc2ff;
+$balanceReceive: #5260ff;
+$balanceBill: #3dcc76;
+$balanceTopup: #cc38f1;
+$balanceMore: #ff9d09;
+
+$cardVisaMaster: #3dc2ff;
+$cardMasterCard: #ff5b5b; //#ff9d09
+$cardAmericanExpress: #3dcc76;
+$cardDiscover: #cc38f1;
+$cardDinersClub: #ff9d09;
+$cardJCB: #5260ff;
+$cardUnionPay: #2dd36f;
+$cardMore: #eb445a;
+
+$border-radius: 14px;
+
+// *** Styles ***
+
+#page-content {
+  padding: 30px 6px 10px 6px;
+}
+
+#page-content .profile {
+  position: relative;
+  .profile-button {
+    border-radius: 50%;
+    background: var(--ion-color-primary);
+    box-shadow: 0 0 0 3px var(--ion-color-light),
+                0 0 0 4px var(--ion-color-primary);
+    outline: none;
+    will-change: contents;
+    transition: all 0.2 ease;
+    &.active {
+      filter: brightness(0.6);
+    }
+  }
+}
+
+#page-content .notifications-button-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .notifications-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    outline: none;
+    will-change: contents;
+    transition: all 0.2 ease;
+    &.active {
+      filter: brightness(0.6);
+    }
+    ion-icon {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+#page-content .balance-and-actions {
+  .balance-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ion-color-step-500);
+  }
+  .balance-amount {
+    margin-block: 1rem 4px;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--ion-color-step-900);
+    .currency {
+      margin-right: 0.5rem;
+    }
+    // .amount { }
+  }
+  .action-button {
+    height: 80px;
+    .action-button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .action-button-icon {
+        display: flex;
+        width: 54px;
+        height: 54px;
+        border-radius: $border-radius;
+        font-size: 1.5rem;
+        color: var(--ion-color-step-500);
+        ion-icon {
+          margin: auto;
+          font-size: 1.5rem;
+          color: var(--ion-color-dark);
+        }
+      }
+      .action-button-title {
+        margin-top: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--ion-color-step-900);
+      }
+    }
+    &[data-action="add"] .action-button-content .action-button-icon {
+      background: $balanceAdd;
+    }
+    &[data-action="remove"] .action-button-content .action-button-icon {
+      background: $balanceSubtract;
+    }
+    &[data-action="transfer"] .action-button-content .action-button-icon {
+      background: $balanceTransfer;
+    }
+    &[data-action="receive"] .action-button-content .action-button-icon {
+      background: $balanceReceive;
+    }
+    &[data-action="bill"] .action-button-content .action-button-icon {
+      background: $balanceBill;
+    }
+    &[data-action="topup"] .action-button-content .action-button-icon {
+      background: $balanceTopup;
+    }
+    &[data-action="more"] .action-button-content .action-button-icon {
+      background: $balanceMore;
+    }
+  }
+}
+
+#page-content .resume {
+  // flex: 1;
+  // height: calc(100vh - 80px - 80px - 80px - 10px - 10px);
+  margin-top: 3rem;
+  background: var(--ion-color-light);
+  border-radius: calc($border-radius * 2);
+  .resume-header {
+    padding: 12px 15px 0px 15px;
+    .resume-title {
+      // border: 1px solid var(--ion-color-step-300);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ion-color-step-500);
+    }
+    .resume-button {
+      // border: 1px solid var(--ion-color-step-300);
+      float: right;
+      height: 20px;
+      .resume-button-title {
+        margin-left: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+}
+
+
+#page-content .resume .contacts .contacts-list {
+  margin-top: 4px;
+  .contact-button {
+    height: 80px;
+    .contact-button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .contact-button-icon {
+        display: flex;
+        width: 54px;
+        height: 54px;
+        border-radius: $border-radius;
+        font-size: 1.5rem;
+        color: var(--ion-color-step-500);
+        ion-icon {
+          margin: auto;
+          font-size: 1.5rem;
+          color: var(--ion-color-dark);
+        }
+      }
+      .contact-button-title {
+        margin-top: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--ion-color-step-900);
+      }
+    }
+  }
+}
+
+#page-content .resume .card .card-list {
+  .card-item {
+    width: 100%;
+    height: 70px;
+    .card-item-content {
+      display: flex;
+      align-items: center;
+      .card-item-icon {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: $border-radius;
+        font-size: 1.5rem;
+        color: var(--ion-color-step-500);
+        ion-icon {
+          margin: auto;
+          font-size: 1.5rem;
+          color: var(--ion-color-dark);
+        }
+      }
+      .card-item-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .card-item-card-title {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--ion-color-step-900);
+        }
+        .card-item-card-number {
+          margin-top: 14px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--ion-color-step-500);
+        }
+      }
+    }
+    &[data-card="visa-master"] .card-item-content .card-item-icon {
+      background: $cardVisaMaster;
+    }
+    &[data-card="mastercard"] .card-item-content .card-item-icon {
+      background: $cardMasterCard;
+    }
+    &[data-card="american-express"] .card-item-content .card-item-icon {
+      background: $cardAmericanExpress;
+    }
+    &[data-card="discover"] .card-item-content .card-item-icon {
+      background: $cardDiscover;
+    }
+    &[data-card="diners-club"] .card-item-content .card-item-icon {
+      background: $cardDinersClub;
+    }
+    &[data-card="jcb"] .card-item-content .card-item-icon {
+      background: $cardJCB;
+    }
+    &[data-card="union-pay"] .card-item-content .card-item-icon {
+      background: $cardUnionPay;
+    }
+    &[data-card="more"] .card-item-content .card-item-icon {
+      background: $cardMore;
+    }
+    .card-item-payment {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: auto;
+      .card-item-payment-amount {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: var(--ion-color-step-900);
+      }
+      .card-item-payment-date {
+        margin-top: 14px;
+        font-size: 0.8rem;
+        color: var(--ion-color-step-500);
+      }
+    }
+  }
+}
+
+#page-content .resume .history {
+  padding: 10px 15px 10px 15px;
+  .history-title {
+    font-size: 1rem;
+    color: var(--ion-color-step-500);
+  }
+  .history-button {
+    float: right;
+    height: 34px;
+    display: flex;
+    ion-icon {
+      margin: auto;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--ion-color-primary);
+    }
+  }
+}

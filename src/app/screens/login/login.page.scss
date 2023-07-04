@@ -1,3 +1,5 @@
+// *** Variables ***
+
 $medium: var(--ion-color-medium);
 $light: var(--ion-color-light);
 
@@ -8,9 +10,21 @@ $Facebook: #3b5998;
 $Twitter: #1da1f2;
 
 $email: #1dc0f2;
-$password: #ff5e3a;
+$password: #f28f1d;
 
 $border-radius: 14px;
+
+// *** Functions ***
+
+@mixin test($p: null) {
+  @if ($p != null) {
+    value: $p;
+  } @else {
+    
+  }
+}
+
+// *** Styles ***
 
 #page-content {
   height: 100vh;
@@ -29,6 +43,8 @@ $border-radius: 14px;
 #page-content .login-with-services {
   .service-login-button {
     border-radius: $border-radius;
+    will-change: contents;
+    transition: all 0.2s ease;
     &.google-login-button {
       background: $Google;
     }
@@ -37,6 +53,9 @@ $border-radius: 14px;
     }
     &.twitter-login-button {
       background: $Twitter;
+    }
+    &:active {
+      filter: brightness(0.6);
     }
     ion-icon {
       font-size: 1.8rem;
@@ -67,10 +86,11 @@ $border-radius: 14px;
 
 #page-content .login-form {
   .login-field-container {
+    position: relative;
     width: 100%;
     display: flex;
     gap: 20px;
-    padding-block: 2rem 1rem;
+    padding-block: 1.5rem 1rem;
     border-bottom: 1px solid $light;
     .login-field-icon {
       width: 55px;
@@ -112,12 +132,29 @@ $border-radius: 14px;
         border: none;
         background: transparent;
         padding: 0.5rem 0;
+        // @include test();
       }
-      input:focus, input:valid {
+      input:focus, input:valid, input.ng-valid {
         outline: none;
         & + label {
           transform: translateY(-0.9rem);
         }
+      }
+    }
+    .show-password-button {
+      position: absolute;
+      right: 0;
+      bottom: calc(1rem + 55px / 2 - 35px / 2);
+      width: 35px;
+      height: 35px;
+      display: flex;
+      border-radius: $border-radius;
+      background: transparent;
+      outline: none;
+      ion-icon {
+        font-size: 1.4rem;
+        color: $medium;
+        margin: auto;
       }
     }
   }
@@ -126,8 +163,39 @@ $border-radius: 14px;
 #page-content .forgot-password-link {
   height: 20px;
   float: right;
+  margin-top: 10px;
   span {
     font-size: 0.9rem;
     color: $medium;
+  }
+}
+
+#page-content .login-button {
+  height: 55px;
+  background: var(--ion-color-primary);
+  border-radius: 50px;
+  &:active {
+    filter: brightness(0.6);
+  }
+  span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: $white;
+  }
+}
+
+#page-content .register {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  transition: all 0.2s ease;
+  & > span {
+    font-size: 0.9rem;
+    color: $medium;
+  }
+  .register-link {
+    font-size: 0.9rem;
+    color: var(--ion-color-primary);
   }
 }

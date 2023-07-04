@@ -1,25 +1,250 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-    <ion-buttons slot="end">
-      <ion-button expand="block" (click)="logout()">Sair</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div class="ion-padding">
+  <div id="page-content">
     
     <!-- <ion-button expand="block" >Sair</ion-button>
     <ion-nav animated="true" root="nav-home" swipeGesture="true">
       <ion-nav-link routerDirection="back" component="nav-profile"></ion-nav-link>
     </ion-nav> -->
+    
+    <header class="header ion-padding">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <div class="profile">
+              <button class="profile-button" (click)="logout()" fill="clear" shape="round">
+                <ion-avatar>
+                  <img src="https://media.istockphoto.com/id/168257259/photo/red-haired-girl-with-upward-braids-and-silly-face.jpg?s=612x612&w=0&k=20&c=8F36DqM7qXtuo_GtLTSfa9JJuxm10SKROAs2uIbrr4Y=" />
+                </ion-avatar>
+              </button>
+              <!-- <menu class="app-menu">
+                <ion-button expand="block" fill="clear" color="light" (click)="logout()">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  Logout
+                </ion-button>
+              </menu> -->
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="notifications-button-content">
+              <ion-button class="notifications-button ion-no-padding" expand="block" fill="clear" color="medium" (click)="null">
+                <ion-icon name="notifications-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </header>
+
+    <div class="balance-and-actions">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <ion-row class="ion-justify-content-center">
+              <span class="balance-title">Balance</span>
+            </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <span class="balance-amount">
+                <span class="currency">$</span>
+                <span class="amount">25.000,00</span>
+              </span>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="3">
+            <ion-button class="action-button" expand="block" fill="clear" color="light" (click)="null" data-action="transfer">
+              <div class="action-button-content">
+                <div class="action-button-icon">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+                <span class="action-button-title">Transfer</span>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button class="action-button" expand="block" fill="clear" color="light" (click)="null" data-action="topup">
+              <div class="action-button-content">
+                <div class="action-button-icon">
+                  <ion-icon name="download"></ion-icon>
+                </div>
+                <span class="action-button-title">Top-up</span>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button class="action-button" expand="block" fill="clear" color="light" (click)="null" data-action="bill">
+              <div class="action-button-content">
+                <div class="action-button-icon">
+                  <ion-icon name="wallet"></ion-icon>
+                </div>
+                <span class="action-button-title">Bill</span>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button class="action-button" expand="block" fill="clear" color="light" (click)="null" data-action="more">
+              <div class="action-button-content">
+                <div class="action-button-icon">
+                  <ion-icon name="grid"></ion-icon>
+                </div>
+                <span class="action-button-title">More</span>
+              </div>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="resume">
+      <div class="contacts">
+        <ion-grid fixed>
+          <ion-row class="resume-header ion-align-items-center">
+            <ion-col size="6">
+              <span class="resume-title">Send Again</span>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button class="resume-button ion-no-padding ion-no-margin" fill="clear" color="light" (click)="null">
+                <span class="resume-button-title">See All</span>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="contacts-list">
+            <ion-col size="3" class="ion-no-margin ion-no-padding">
+              <ion-button class="contact-button" expand="block" fill="clear" color="light" (click)="null">
+                <div class="contact-button-content">
+                  <div class="contact-button-pic">
+                    <ion-avatar>
+                      <img src="https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e28993f/_orig/pixomatic_1572877034633.png" />
+                    </ion-avatar>
+                  </div>
+                  <span class="contact-button-title">Surmati</span>
+                </div>
+              </ion-button>
+            </ion-col>
+            <ion-col size="3" class="ion-no-margin ion-no-padding">
+              <ion-button class="contact-button" expand="block" fill="clear" color="light" (click)="null">
+                <div class="contact-button-content">
+                  <div class="contact-button-pic">
+                    <ion-avatar>
+                      <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" />
+                    </ion-avatar>
+                  </div>
+                  <span class="contact-button-title">Surmati</span>
+                </div>
+              </ion-button>
+            </ion-col>
+            <ion-col size="3" class="ion-no-margin ion-no-padding">
+              <ion-button class="contact-button" expand="block" fill="clear" color="light" (click)="null">
+                <div class="contact-button-content">
+                  <div class="contact-button-pic">
+                    <ion-avatar>
+                      <img src="https://gotprofile.com/static/images/model1.jpg" />
+                    </ion-avatar>
+                  </div>
+                  <span class="contact-button-title">Surmati</span>
+                </div>
+              </ion-button>
+            </ion-col>
+            <ion-col size="3" class="ion-no-margin ion-no-padding">
+              <ion-button class="contact-button" expand="block" fill="clear" color="light" (click)="null">
+                <div class="contact-button-content">
+                  <div class="contact-button-pic">
+                    <ion-avatar>
+                      <img src="https://media.istockphoto.com/id/1340604030/photo/lifestyle-and-people-concept-look-at-me-like-im-funny-portrait-of-a-young-beautiful-girl-on-a.jpg?s=612x612&w=0&k=20&c=2adYSeA4I1kHr-Avuodb-alwrJwm0qpsNN2voooXLhQ=" />
+                    </ion-avatar>
+                  </div>
+                  <span class="contact-button-title">Surmati</span>
+                </div>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="card">
+        <ion-grid fixed>
+          <ion-row class="resume-header ion-align-items-center">
+            <ion-col size="6">
+              <span class="resume-title">Your Card</span>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button class="resume-button ion-no-padding ion-no-margin" fill="clear" color="light" (click)="null">
+                <span class="resume-button-title">Add</span>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="card-list">
+            <ion-col size="12">
+              <ion-row>
+                <ion-button class="card-item ion-no-margin" expand="block" fill="clear" color="light" (click)="null" data-card="visa-master">
+                  <ion-grid fixed class="ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                      <ion-col size="6">
+                        <div class="card-item-content">
+                          <div class="card-item-icon">
+                            <ion-icon name="card"></ion-icon>
+                          </div>
+                          <div class="card-item-text ion-margin-start">
+                            <span class="card-item-card-title">Visa Master</span>
+                            <span class="card-item-card-number">6013</span>
+                          </div>
+                        </div>
+                      </ion-col>
+                      <ion-col size="6">
+                        <div class="card-item-payment">
+                          <span class="card-item-payment-amount">$ 1,000.00</span>
+                          <span class="card-item-payment-date">01/2023</span>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-button>
+              </ion-row>
+              <ion-row>
+                <ion-button class="card-item ion-no-margin" expand="block" fill="clear" color="light" (click)="null" data-card="mastercard">
+                  <ion-grid fixed class="ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                      <ion-col size="6">
+                        <div class="card-item-content">
+                          <div class="card-item-icon">
+                            <ion-icon name="card"></ion-icon>
+                          </div>
+                          <div class="card-item-text ion-margin-start">
+                            <span class="card-item-card-title">Master card</span>
+                            <span class="card-item-card-number">2304</span>
+                          </div>
+                        </div>
+                      </ion-col>
+                      <ion-col size="6">
+                        <div class="card-item-payment">
+                          <span class="card-item-payment-amount">$ 4,000.00</span>
+                          <span class="card-item-payment-date">01/2023</span>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-button>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="history">
+        <ion-grid fixed>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="8">
+              <span class="history-title">Transactions History</span>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button class="history-button ion-no-padding ion-no-margin" fill="clear" color="light" (click)="null">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-button>
+              <!-- <ion-button *ngIf="isCordova" (click)="openCordova()">
+              </ion-button> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
 
   </div>
 </ion-content>

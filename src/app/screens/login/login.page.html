@@ -1,8 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="ion-padding" id="page-content">
     
-    <!-- <ion-button expand="block" (click)="login()">Entrar</ion-button> -->
-    
     <ion-grid fixed>
       
       <ion-row>
@@ -49,7 +47,7 @@
               <div class="login-field-icon" data-type="email">
                 <ion-icon name="mail"></ion-icon>
               </div>
-              <div class="login-field-content ion-align-items-center" (click)="emailFieldFocus()">
+              <div class="login-field-content ion-align-items-center" button (click)="emailFieldFocus()">
                 <input type="email" id="emailField" [(ngModel)]="email" required="true" />
                 <label>Email</label>
               </div>
@@ -60,10 +58,13 @@
               <div class="login-field-icon" data-type="password">
                 <ion-icon name="mail"></ion-icon>
               </div>
-              <div class="login-field-content ion-align-items-center" (click)="passwordFieldFocus()">
-                <input type="email" id="passwordField" [(ngModel)]="password" required="true" />
+              <div class="login-field-content ion-align-items-center" button (click)="passwordFieldFocus()">
+                <input type="password" id="passwordField" [(ngModel)]="password" required="true" />
                 <label>Password</label>
               </div>
+              <button class="show-password-button" data-type="password" (click)="showPassword()">
+                <ion-icon name="eye" id="showPasswordIcon"></ion-icon>
+              </button>
             </div>
           </ion-row>
           <ion-row>
@@ -73,7 +74,23 @@
               </ion-button>
             </ion-col>
           </ion-row>
+          <ion-row class="ion-margin-top">
+            <ion-col size="12">
+              <ion-button expand="block" color="none" [disabled]="!email || !password" (click)="login()" class="login-button">
+                <span>Login Now</span>
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <div class="register ion-justify-content-center ion-align-items-center">
+          <span>Don't have an account?</span>
+          <ion-button expand="clear" (click)="register()" class="register-link ion-no-padding ion-no-margin">
+            <span>Register Now</span>
+          </ion-button>
+        </div>
       </ion-row>
 
     </ion-grid>

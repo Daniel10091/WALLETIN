@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  email?: string;
-  password?: string;
+  email?: string = '';
+  password?: string = '';
 
   constructor(private router: Router) { }
 
@@ -23,7 +23,13 @@ export class LoginPage implements OnInit {
 
   login(): any {
     // window.location.href = '/screens/home';
-    this.router.navigate(['/screens/home']);
+    setTimeout(() => {
+      if (this.email === 'admin@gmail.com' && this.password === 'admin') {
+        this.router.navigate(['/screens/home']);
+      } else {
+        alert('Invalid credentials');
+      }
+    }, 400);
   }
 
   loginWithGoogle(): any {}
@@ -40,8 +46,32 @@ export class LoginPage implements OnInit {
     document.getElementById('passwordField')?.focus();
   }
 
+  emailFieldBlur(): any {
+    document.getElementById('emailField')?.blur();
+  }
+
+  passwordFieldBlur(): any {
+    document.getElementById('passwordField')?.blur();
+  }
+
+  showPassword(): any {
+    const passwordField = document.getElementById('passwordField') as HTMLInputElement;
+    const showPasswordIcon = document.getElementById('showPasswordIcon') as HTMLInputElement;
+    if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      showPasswordIcon.name = 'eye-off';
+    } else {
+      passwordField.type = 'password';
+      showPasswordIcon.name = 'eye';
+    }
+  }
+
   forgotPassword(): any {
     this.router.navigate(['/screens/forgot-password']);
+  }
+
+  register(): any {
+    this.router.navigate(['/screens/register']);
   }
 
 }
